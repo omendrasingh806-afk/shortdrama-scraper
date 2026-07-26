@@ -1,0 +1,27 @@
+services:
+  - type: web
+    name: shortdrama-scraper
+    runtime: node
+    plan: free
+    buildCommand: npm ci
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_VERSION
+        value: 20.19.2
+      - key: SOURCE_URL
+        value: https://microtv.st/
+      - key: CACHE_TTL_SECONDS
+        value: "900"
+      - key: STALE_CACHE_SECONDS
+        value: "86400"
+      - key: REQUEST_TIMEOUT_MS
+        value: "20000"
+      - key: MAX_HTML_BYTES
+        value: "5242880"
+      - key: RESPECT_ROBOTS
+        value: "true"
+      - key: CORS_ORIGIN
+        value: "*"
+      - key: REFRESH_TOKEN
+        generateValue: true

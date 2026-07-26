@@ -1,0 +1,21 @@
+{
+  "name": "shortdrama-scraper",
+  "version": "1.0.0",
+  "description": "Render-ready API that extracts short-drama titles and poster URLs from the MicroTV homepage.",
+  "private": true,
+  "type": "module",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=20.19.0"
+  },
+  "dependencies": {
+    "cheerio": "1.1.2",
+    "dotenv": "16.6.1",
+    "express": "5.1.0"
+  }
+}
